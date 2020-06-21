@@ -375,13 +375,13 @@ span.mask {
 	width: 110px;
 	height: 110px;
 	position: fixed;
-	bottom: 80px;
-	left: 80px;
+	top: 20%;
+	right: 80px;
 	border-radius: 100px;
 	background-color: #FFFFFF;
 	border: 2px solid #00FFFF;
 	color: #00FFFF;
-	z-index:500;
+	z-index: 500;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -399,7 +399,8 @@ span.mask {
 	justify-content: center;
 	align-items: center;
 }
-.menu p{
+
+.menu p {
 	width: 100%;
 	text-align: center;
 	margin: 0;
@@ -409,6 +410,7 @@ span.mask {
 	z-index: 200;
 	letter-spacing: -1px;
 }
+
 .menu:hover {
 	transform: scale(1.12, 1.12);
 	box-shadow: 2px 2px 3px #CCCCCC;
@@ -494,4 +496,37 @@ span.mask {
 .path4 {
 	top: 30px;
 	right: -55px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------- */
+/* 移动样式 */
+@media screen and (max-width: 576px) {
+	html{
+		width: 100vw;
+	}
+	.scalable {
+		height: auto;
+		min-width: 150px;
+		max-width: 50vw;
+	}
+   .main{
+	   min-width: 700px;
+   }
+   .box,#menu1{
+   		   transform: scale(0.5,0.5);
+   }
+
 }

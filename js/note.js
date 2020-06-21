@@ -143,3 +143,29 @@ $(document).ready(function() {
 		$("div.path4").hide(800);
 	})
 });
+
+var box = document.querySelector("#menu1");
+var drop = document.querySelector(".menu");
+drop.onmousedown = function(event) { // 鼠标在拖动条上 按下 可拖动盒子  
+	var event = event || window.event;
+	// 获取鼠标按下时的位置
+	var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+	var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+	// 计算鼠标按下的位置 距 盒子的位置
+	var spaceX = pageX - box.offsetLeft;
+	var spaceY = pageY - box.offsetTop;
+	document.onmousemove = function(event) { // 鼠标移动的时候 获取鼠标的位置 整个盒子跟着鼠标的位置走
+		var event = event || window.event;
+		// 获取移动后鼠标的位置
+		var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+		var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+		// 计算并设置盒子移动后的位置
+		box.style.left = pageX - spaceX + 'px';
+		box.style.top = pageY - spaceY + 'px';
+		// 清理鼠标拖动时，选中拖动条中文字的情况
+		window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+	};
+};
+document.onmouseup = function() { // 释放鼠标按键时  取消盒子的移动 
+	document.onmousemove = null;
+};

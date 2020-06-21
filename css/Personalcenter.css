@@ -589,7 +589,7 @@
        	width: 300px;
        	background: url(../images/night.gif);
        	/* background: url(../images/cool-background%20(1).png); */
-       	height: 100vh;
+       	height: 1680px;
        	z-index: 98;
        	transform: translateX(-300px);
        	box-sizing: border-box;
@@ -744,16 +744,39 @@
        /* ------------------------------------------------------------------------------- */
        /* 移动样式 */
        @media screen and (max-width: 576px) {
+		 /*  html{
+			   height: 1300px;
+		   } */
        	#box span{
        		display: none;
+			transform: scale(0.01,0.01);
+			visibility: hidden;
        	}
-        #box img{
+		
+		#box{
 			display: none;
+			transform: scale(0.01,0.01);
 		}
        	#musicbox {
-       		position: fixed;
-       		bottom: 20px;
+       		display: none;
+			visibility: hidden;
+			transform: scale(0.01,0.01);
        	}
-
-
+       .hamburger-menu-container {
+		   height: auto;
+	   }
+       #hamburger-hidden-checkbox:checked~.hamburger-menu-container {
+       	transform: scale(0.8,1)  translateX(-36px);
+       }
+	  .container h2,img,p{
+		   margin-left: 20px;
+	   }
+       #teletype{
+		   margin-left: 20px;
+		   height: 50px;
+		   display: block;
+	   }
+	   .box{
+		   transform: scale(0.3,0.3);
+	   }
        }
